@@ -41,25 +41,45 @@ if($con->connect_error) {
     $stmt_result = $stmt->get_result();
     if($stmt_result->num_rows > 0) {
        $data = $stmt_result->fetch_assoc();
+         
        if($data['password'] === $password) {
-        
-        echo "<h2>Login Successful!! ,Welcome to Call Centre Assessments</h2>";
+
+       echo "<h2>Login Successful!! ,Welcome to Call Centre Assessments</h2>";
        }
        else {
         echo "<h2>Invalid Email or password</h2>";
+        die;
        }
     }else {
         echo "<h2>Invalid Email or password</h2>";
+        die;
     }
 }
+// SQL to create table
+$sql = "CREATE TABLE agent_registration (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  firstname VARCHAR(30) NOT NULL,
+    
+  )";
+  
+  
+
+
+
 ?>
-<div class="topnav">
+<nav class="nav-bar">
             <a class="active" href="#home">Home</a>
         
             <input type="text" placeholder="Search..">
             
-                <a href="logout.php">logout</a>
-        
+            <ul>
+               <li class="nav-link"><a href="logout.php">logout</a></li>
+
+               <li onclick="window.location.href='registration.html'" class="register-button"><input type="button" value="Add Agent" class= "right">
+              
+              
+              </li>
+            </ul>
             </div>
            
     </head>
@@ -79,46 +99,46 @@ if($con->connect_error) {
           </tr>
           
             <tr>
-              <td>MabhengoN</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr> 
             <tr>
-              <td>MugabeJ</td>
+              <td></td>
               <td><input type="date"></td>
               <td>No</td>
             </tr>
             <tr>
-              <td>MudekaA</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
             <tr>
-              <td>DanjeG</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
             <tr>
-              <td>MutataP</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
             <tr>
-              <td>SahumaniR</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
             <tr>
-              <td>GwiziR</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
             <tr>
-              <td>NyoniP</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
               <tr>
-              <td>Ayanda</td>
+              <td></td>
               <td><input type="date"></td>
               <td>Yes</td>
             </tr>
